@@ -1,0 +1,17 @@
+ to open.</p><p>You'll see this error if your computer or mobile device's date and time are inaccurate.</p>
+    <p>To fix the error, open your device's clock. Make sure the time and date are correct.</p>"Software on your computer is stopping Opera from safely connecting to the web" (Windows computers only)<p>You'll see this error if you have Superfish software on your Windows computer.</p>
+      <p>Follow these steps to temporarily disable the software so you can get on the web. You'll need administrator privileges.</p>
+      <ol>
+      <li>Click <strong>Start</strong>, then search for and select <strong>"View local services"</strong>
+      <li>Select <strong>VisualDiscovery</strong>
+      <li>Under <strong>Startup type</strong>, select <strong>Disabled</strong>
+      <li>Under <strong>Service status</strong>, click <strong>Stop</strong>
+      <li>Click <strong>Apply</strong>, then click <strong>OK</strong>
+      </ol>The page ahead may try to charge you moneyThese charges could be one-time or recurring and may not be obvious.Go BackProceedPumunta sa
+          Main menu >
+          <span jscontent="settingsTitle"></span>
+          >
+          <span jscontent="advancedTitle"></span>
+          at piliin ang "<span jscontent="noNetworkPredictionTitle"></span>."
+          Kung hindi nito maresolba ang isyu, inirerekumenda namin na piliin ang opsyon na ito
+          muli para pabutihin ang performance.Payagan ang Opera na ma-access ang network sa mga setting ng iyong firewall o antivirus.Hindi pa natatapos ng Chromium OS ang pauna nitong pag

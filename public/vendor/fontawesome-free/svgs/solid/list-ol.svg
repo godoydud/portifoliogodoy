@@ -1,0 +1,56 @@
+      _classCallCheck(this, Item);
+
+        var _this = _possibleConstructorReturn(this, (Item.__proto__ || Object.getPrototypeOf(Item)).call(this, props));
+
+        _this.pref = _ServiceFactory2.default.get(_Consts.PREFERENCES_SERVICE);
+        _this.props = props;
+        _this.state = {
+            style: {},
+            hovered: false
+        };
+
+        if (_this.props.config.key) {
+            _this.state.active = 1; // default
+        }
+
+        if (props.config.selected) {
+            _this.state = {
+                style: _assign({}, _this.state ? _this.state.style : {}, props.config.selectedStyle),
+                hovered: false
+            };
+        }
+
+        _this.getStateFromLocalStorage();
+
+        _this.handleClick = _this.handleClick.bind(_this);
+        _this.handleMouseEnter = _this.handleMouseEnter.bind(_this);
+        _this.handleMouseLeave = _this.handleMouseLeave.bind(_this);
+        return _this;
+    }
+
+    _createClass(Item, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.mounted = true;
+            if (this.props.config.attributes) {
+                var elem = ReactDOM.findDOMNode(this);
+                if (elem) {
+                    for (var att in this.props.config.attributes) {
+                        elem.setAttribute(att, this.props.config.attributes[att]);
+                    }
+                }
+            }
+            _Actions.register.bind(this)(this.props.config.behaviours);
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this.mounted = false;
+            _Actions.unregister.bind(this)(this.props.config.behaviours);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            this.getStateFromLocalStorage();
+            var prefService = _ServiceFactory2.default.get(_Consts.PREFERENCES_SERVICE);
+            var component = React.createElement('div', { style: { 

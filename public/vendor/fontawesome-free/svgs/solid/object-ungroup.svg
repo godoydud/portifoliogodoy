@@ -1,0 +1,4 @@
+t ang pagre-record, kailangan mong i-enable ang iyong camera.I-click Upang I-on ang CameraOpera 12 NotesKakabalik lang namin mula sa isang pag-crash, ngunit para magawa ito kinailangan naming ganap na alisin ang profile na na-import mula sa Opera 12 (hindi apektado ang orihinal na profile). Paumanhin!Na-import mula sa OperaNa-save ang 12 sesyon ng Opera{NUM_DOWNLOAD, plural, =1 {Hindi natapos na mga download} other {Hindi natapos na mga download}}{NUM_DOWNLOAD, plural,
+          =1 {Mayroon kang hindi natapos na download.}
+          other {Mayroon kang # na hindi natapos na download.}
+        }$1 Sigura

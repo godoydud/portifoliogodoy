@@ -1,0 +1,17 @@
+ey: 'handleClick',
+        value: function handleClick(event) {
+            if (this.props.config.events && this.props.config.events.onClick) {
+                var addedParams = { active: this.state.active };
+                addedParams = addedParams.active == undefined ? null : addedParams;
+                var params = _assign({}, addedParams, this.props.config.events.onClick);
+                event.stopPropagation();
+                _EventsService2.default.trigger(this.props.config.events.onClick.name, [params, _assign({}, this.props.config)]);
+            }
+            if (this.props.onClick) {
+                this.props.onClick(event);
+            }
+        }
+    }, {
+        key: 'getStyleByState',
+        value: function getStyleByState(state) {
+   

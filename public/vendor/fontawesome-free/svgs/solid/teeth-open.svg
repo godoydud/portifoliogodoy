@@ -1,0 +1,15 @@
+om safely connecting to the web" (Windows computers only)<p>You'll see this error if you have Superfish software on your Windows computer.</p>
+      <p>Follow these steps to temporarily disable the software so you can get on the web. You'll need administrator privileges.</p>
+      <ol>
+      <li>Click <strong>Start</strong>, then search for and select <strong>"View local services"</strong>
+      <li>Select <strong>VisualDiscovery</strong>
+      <li>Under <strong>Startup type</strong>, select <strong>Disabled</strong>
+      <li>Under <strong>Service status</strong>, click <strong>Stop</strong>
+      <li>Click <strong>Apply</strong>, then click <strong>OK</strong>
+      </ol>The page ahead may try to charge you moneyThese charges could be one-time or recurring and may not be obvious.Go BackProceedIr para
+          o menu Principal >
+          <span jscontent="settingsTitle"></span>
+          >
+          <span jscontent="advancedTitle"></span>
+          e retire a seleção "<span jscontent="noNetworkPredictionTitle"></span>."
+         Se isto não resolver o problema, recomendamos

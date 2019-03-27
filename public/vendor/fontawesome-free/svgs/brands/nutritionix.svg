@@ -1,0 +1,34 @@
+ vec3 c_vTangent = tangent.xyz;
+    vec3 c_vBinormal = binormal.xyz;
+    vec2 c_vDiffuseTexCoords = texCoords.xy;
+    vec2 c_vCorner = corner.xy;
+    vec2 c_vLodScales = texCoords.zw;
+    float  c_fPlanarOffset = corner.w * c_fTreeScale;
+
+    // compensate for the instance's arbitrary rotation
+    vec3 vRotatedOffset = AdjustForTreeRotation(c_vCardOffset, g_vTreeRotation);
+    vec3 vRotatedNormal = AdjustForTreeRotation(c_vNormal, g_vTreeRotation);
+    vec3 vRotatedTangent = AdjustForTreeRotation(c_vTangent, g_vTreeRotation);
+    vec3 vRotatedBinormal = AdjustForTreeRotation(c_vBinormal, g_vTreeRotation);
+
+    // LOD interpolation; cards are shrunk & grown, depending on the LOD setting
+    float fLodScale = lerp(c_vLodScales.y, c_vLodScales.x, c_fLodLerp);
+    vec2 vLodScaledCorner = c_vCorner * fLodScale;
+    vec3 vCardCorner = vec3(0.0, vLodScaledCorner);
+
+    // rotate the card to face the camera
+    vCardCorner = mul(g_mCameraFacingMatrix, vCardCorner);
+
+    // place the card according to the tree's overall scale
+    vec3 vPosition = vRotatedOffset + vCardCorner.xyz;
+
+    // move the vertex with wind
+#ifdef SPEEDTREE_BASIC_WIND
+    vec4 c_vWindData = windData;
+    float  c_fWindScalar = binormal.w;
+    vPosition = LeafWindMotion(vPosition, vRotatedNormal, c_fWindScalar);
+    vec3 vWindOffset;
+    vPosition = CommonWindMotion(vPosition, c_vWindData, vWindOffset);
+
+    #ifdef SPEEDTREE_WIND_AFFECTS_LIGHTING
+        vRotatedNormal += vWindO
